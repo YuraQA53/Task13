@@ -12,7 +12,7 @@ public class ProductManagerTest {
     ProductManager manager = new ProductManager(repo);
 
     Product product = new Product(21, "bread", 35);
-    Product book = new Book(22, "инструкция iPhone 14 Pro Max ", 70, "Автор");
+    Product book = new Book(22, "инструкция iPhone 14 Pro Max", 70, "Автор");
     Product smartphone = new Smartphone(23, "iPhone 14 Pro Max", 164990, "Apple");
 
     @Test

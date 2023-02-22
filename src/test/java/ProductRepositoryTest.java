@@ -8,9 +8,9 @@ import static org.junit.jupiter.api.Assertions.assertArrayEquals;
 
 public class ProductRepositoryTest {
     private final ProductRepository repo = new ProductRepository();
-    Product product = new Product(12, "bread", 35);
-    Product book = new Book(15, "Властелин колец. Хранители кольца", 50, "Толкин Джон Рональд Руэл");
-    Product smartphone = new Smartphone(19, "iPhone 14 Pro Max", 164990, "Apple");
+    Product product = new Product(21, "bread", 35);
+    Product book = new Book(22, "инструкция iPhone 14 Pro Max", 70, "Автор");
+    Product smartphone = new Smartphone(23, "iPhone 14 Pro Max", 164990, "Apple");
 
     @Test
     public void saveTest() {
@@ -43,7 +43,7 @@ public class ProductRepositoryTest {
         repo.save(product);
         repo.save(book);
         repo.save(smartphone);
-        repo.removeById(12);
+        repo.removeById(21);
 
         Product[] expected = {book, smartphone};
         Product[] actual = repo.getProducts();
@@ -57,9 +57,9 @@ public class ProductRepositoryTest {
         repo.save(product);
         repo.save(book);
         repo.save(smartphone);
-        repo.removeById(12);
-        repo.removeById(15);
-        repo.removeById(19);
+        repo.removeById(21);
+        repo.removeById(22);
+        repo.removeById(23);
 
         Product[] expected = {};
         Product[] actual = repo.getProducts();
