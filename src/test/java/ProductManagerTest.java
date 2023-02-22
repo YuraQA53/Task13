@@ -12,7 +12,7 @@ public class ProductManagerTest {
     ProductManager manager = new ProductManager(repo);
 
     Product product = new Product(21, "bread", 35);
-    Product book = new Book(22, "Властелин колец. Хранители кольца", 3331, "Толкин Джон Рональд Руэл");
+    Product book = new Book(22, "инструкция iPhone 14 Pro Max ", 70, "Автор");
     Product smartphone = new Smartphone(23, "iPhone 14 Pro Max", 164990, "Apple");
 
     @Test
@@ -61,7 +61,7 @@ public class ProductManagerTest {
         manager.add(book);
         manager.add(smartphone);
         manager.add(product);
-        String name = "pixel";
+        String name = "Google pixel";
         Product[] expected = {};
         Product[] actual = manager.searchBy(name);
         assertArrayEquals(expected, actual);
