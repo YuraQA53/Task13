@@ -1,5 +1,7 @@
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import ru.netology.realm.Book;
+import ru.netology.realm.NotFoundException;
 import ru.netology.realm.Product;
 import ru.netology.realm.Smartphone;
 import ru.netology.repository.ProductRepository;
@@ -67,8 +69,20 @@ public class ProductRepositoryTest {
         assertArrayEquals(expected, actual);
     }
 
-}
+    @Test
+    public void testRemoveWhenProductNotExist() {
 
+        repo.save(product);
+        repo.save(book);
+        repo.save(smartphone);
+
+        Assertions.assertThrows(NotFoundException.class,
+                () -> repo.removeById(4)
+        );
+
+
+    }
+}
 
 
 
